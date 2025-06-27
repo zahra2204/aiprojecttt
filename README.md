@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fraud Detection System
 
 A machine learning-based fraud detection system that uses Random Forest Classifier to identify fraudulent transactions.
@@ -77,3 +78,6 @@ The system generates:
 ## Contributing
 
 Feel free to submit issues and enhancement requests. 
+=======
+# aiprojecttt
+>>>>>>> 1eca2e9a026bc3e259e099ecf777f9287d897b29
