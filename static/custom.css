@@ -1,0 +1,124 @@
+/* Custom animations and transitions */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animations to elements */
+.summary-card {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+.table tr {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+.prediction-badge {
+    animation: fadeInUp 0.3s ease-out forwards;
+}
+
+/* Hover effects */
+.summary-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.table tbody tr:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+.prediction-badge:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Loading animation */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .table-responsive {
+        margin: 15px -15px;
+        border-radius: 0;
+    }
+    
+    .prediction-badge {
+        padding: 3px 8px;
+        font-size: 0.8em;
+    }
+}
+
+/* Print styles */
+@media print {
+    .summary-cards {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .summary-card {
+        width: 33.33%;
+        margin: 0;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .table th,
+    .table td {
+        border: 1px solid #ddd;
+    }
+    
+    .back-btn,
+    .btn-outline-primary {
+        display: none;
+    }
+} 
